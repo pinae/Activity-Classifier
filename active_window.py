@@ -16,7 +16,7 @@ def get_active_window_title():
         return None
     match = re.match(b"WM_NAME\(\w+\) = (?P<name>.+)$", stdout)
     if match is not None:
-        return match.group("name").strip(b'"')
+        return window_id, match.group("name").strip(b'"')
     return None
 
 
